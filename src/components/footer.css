@@ -1,0 +1,10 @@
+.footer-container {
+    height: 70px;
+    background-color: #222529 ;
+    padding: 0.5rem;
+    color: #9d9fa0;
+}
+
+.footer-container p {
+  margin: 0;
+}

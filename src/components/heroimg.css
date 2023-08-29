@@ -1,0 +1,62 @@
+.jumbotron-container {
+    background-color: rgb(40, 39, 39);
+    height: 120vh;
+    width: auto;
+}
+
+.opacity-layer {
+    height: inherit; 
+    /* background-color: rgba(40, 39, 39, 0.6); */
+    background: rgb(27,27,27);
+    background: linear-gradient(143deg, rgba(27,27,27,1) 0%, rgba(173,173,173,0.46964723389355745) 67%, rgba(20,20,20,1) 95%, rgba(0,0,0,1) 100%);
+}
+
+.jumbotron {
+    height: inherit;
+    width: auto;
+    background-image: url(/src/assets/img/heroimg.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -400px 0px;
+}
+
+.icons-homepage-section {
+    height: inherit;
+    padding-top: 50px;
+    /* border: thin solid white; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hp-icon-container {
+    padding-top: 15px;
+    margin: 10px;
+    display: flex;
+    
+}
+
+
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+    .jumbotron {
+        background-position: 0px;
+    }
+
+    
+    .icons-homepage-section {
+        padding-top: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .hp-icon-container {
+        margin: 0 50px 0 50px;
+        
+    }
+
+
+ }
