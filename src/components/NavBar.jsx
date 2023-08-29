@@ -10,9 +10,10 @@ export default function NavBar() {
     <>
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand  className="navbar-logo" href="#home"><img className="navbar-logo" src={NavLogo} alt="" /></Navbar.Brand>
+          {/* <Navbar.Brand  className="navbar-logo"><img className="navbar-logo" src={NavLogo} alt="" /><Nav.Link as={Link} to='/' ></Nav.Link></Navbar.Brand> */}
+          <Nav.Link as={Link} to='/' ><img className="navbar-logo" src={NavLogo} alt="" /></Nav.Link>
           <Nav className="me-auto">
-            <Nav.Link as={Link} className='fw-bold ' to='/' >INICIO</Nav.Link>
+            {/* <Nav.Link as={Link} className='fw-bold ' to='/' ></Nav.Link> */}
             <Nav.Link as={Link} className='fw-bold ' to='/menu'>MENU</Nav.Link>
             <Nav.Link as={Link} className='fw-bold ' to='/delivery'>DELIVERY</Nav.Link>
             <Nav.Link as={Link} className='fw-bold ' to='/reservas'>RESERVAS</Nav.Link>

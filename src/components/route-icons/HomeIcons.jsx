@@ -6,8 +6,8 @@ export default function HomeIcons({icono, text, path}) {
 
     return (
         <div className='container-icon'>
-                <img src={icono} alt="" />
-                <p><Link className="fw-bold text-white text-decoration-none" to={path}>{text}</Link></p>
+                <Link className="link-home-icons fw-bold text-white text-decoration-none" to={path}><img src={icono} alt="" /></Link>
+                <p><Link className="link-home-icons fw-bold text-white text-decoration-none" to={path}>{text}</Link></p>
         </div>
     )
 }
