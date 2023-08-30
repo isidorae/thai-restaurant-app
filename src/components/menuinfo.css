@@ -1,0 +1,22 @@
+.menu-page-container {
+    height: 120vh;
+    width: auto;
+    color: rgb(187, 187, 187) !important;
+
+}
+
+.bg-image-menu {
+    height: inherit;
+    background-image: url(/src/assets/img/menuimg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0px;
+
+}
+
+.menu-page-opacity-layer {
+    height: inherit; 
+    background: rgb(27,27,27);
+    background: linear-gradient(200deg, rgba(27,27,27,1) 0%, rgba(173,173,173,0.46964723389355745) 67%, rgba(20,20,20,1) 95%, rgba(0,0,0,1) 100%);
+}
+

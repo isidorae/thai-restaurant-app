@@ -1,0 +1,131 @@
+.contact-page-container {
+    height: 120vh;
+    width: auto;
+
+}
+
+.bg-image-contact {
+    height: inherit;
+    background-image: url(/src/assets/img/contactimg.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -250px 0px;
+
+}
+
+.contact-page-opacity-layer {
+    height: inherit; 
+    background: rgb(27,27,27);
+    background: linear-gradient(200deg, rgba(27,27,27,1) 0%, rgba(173,173,173,0.46964723389355745) 67%, rgba(20,20,20,1) 95%, rgba(0,0,0,1) 100%);
+}
+
+.info-container {
+    color: rgb(187, 187, 187) !important;
+}
+
+.social-media-icons a {
+    padding: 0.5rem; 
+}
+
+
+ .mapa-form-container {
+    /* background-color: aliceblue; */
+    /* width: 1000px;
+    height: 600px; */
+    margin: 0 auto;
+    margin-top: 1rem;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+ }
+
+ .mapa-container {
+    /* background-color: aquamarine; */
+    /* width: 400px;
+    height:550px; */
+    width: 30vw;
+    height: 60vh;
+    min-width: 400px;
+    max-height: 400px;
+ }
+
+
+ .icon-form-container img {
+    width:100px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    height: auto;
+    display: flex;
+    align-self: flex-start;
+ }
+
+ .form-container {
+    /* background-color: cornsilk; */
+    /* width: 400px;
+    height:550px; */
+    padding-top: 1rem;
+    width: 30vw;
+    height: 60vh;
+    min-width: 400px;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+
+
+ .mapa-ubicacion iframe {
+    height: 400px;
+    width: 400px;
+    border-radius: 2%;
+    opacity: 80%;
+ }
+
+
+
+/******************  MEDIA QUERIE */
+
+@media (min-width: 550px) { 
+
+    .bg-image-contact {
+        height: inherit;
+        background-image: url(/src/assets/img/contactimg.jpeg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0px;
+    
+    }
+
+
+ }
+
+ @media (max-width: 850px) { 
+
+    .mapa-container {
+        /* background-color: aquamarine; */
+        /* width: 400px;
+        height:550px; */
+        width: 30vw;
+        height: 60vh;
+        min-width: 400px;
+        max-height: 400px;
+     }
+    
+     .form-container {
+        /* background-color: cornsilk; */
+        /* width: 400px;
+        height:550px; */
+        width: 30vw;
+        height: 60vh;
+        min-width: 400px;
+     }
+
+     .contact-page-container {
+        height: 1300px;
+        width: auto;
+    
+    }
+  
+ }

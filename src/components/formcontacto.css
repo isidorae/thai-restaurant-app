@@ -1,0 +1,23 @@
+
+h3 {
+    color: rgb(236, 236, 236) !important;
+}
+
+
+form{
+    opacity: 80%;
+    width: 370px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+
+ }
+
+ form input {
+    margin: 0.2rem;
+ }
+
+ #input-asunto {
+    margin-bottom: 0.2rem;
+ }
+

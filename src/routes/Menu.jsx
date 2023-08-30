@@ -1,9 +1,10 @@
 import React from 'react'
+import MenuInfo from '../components/MenuInfo'
 
 export default function Menu() {
     return(
         <>
-        <h2>Menu</h2>
+        < MenuInfo/>
         </>
     )
 }
