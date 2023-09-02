@@ -1,5 +1,5 @@
 .delivery-page-container {
-    height: 120vh;
+    height: 1500px;
     width: auto;
     color: rgb(187, 187, 187) !important;
 
@@ -9,7 +9,7 @@
     height: inherit;
     background-image: url(/src/assets/img/deliveryimg.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     /* background-position: -250px 0px; */
 
 }
@@ -20,6 +20,17 @@
     background: linear-gradient(200deg, rgba(27,27,27,1) 0%, rgba(173,173,173,0.46964723389355745) 67%, rgba(20,20,20,1) 95%, rgba(0,0,0,1) 100%);
 }
 
+.food-items-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.food-item {
+    margin: 0.6rem;
+    max-width: 45em;
+}
 
 @media (min-width: 550px) { 
 
