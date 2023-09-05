@@ -1,5 +1,5 @@
 import React from 'react'
-import HeroImg from '../components/heroimg'
+import HeroImg from '../components/home/HeroImg'
 
 export default function Inicio() {
     return(

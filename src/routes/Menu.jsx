@@ -1,5 +1,5 @@
 import React from 'react'
-import MenuInfo from '../components/MenuInfo'
+import MenuInfo from '../components/menu/MenuInfo'
 
 
 export default function Menu() {

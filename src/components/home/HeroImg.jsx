@@ -1,6 +1,6 @@
 import React from 'react'
 import './heroimg.css'
-import HomeIcons from './route-icons/HomeIcons'
+import HomeIcons from './HomeIcons'
 
 
 //ICONOS
