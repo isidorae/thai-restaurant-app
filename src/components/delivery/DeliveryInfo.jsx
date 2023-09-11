@@ -1,14 +1,79 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './deliveryinfo.css'
 import MenuProduct from './MenuProduct';
 import TableCarrito from './TableCarrito';
-import kheaw from '/src/assets/img/kheaw-waan.webp'
-import khandang from '/src/assets/img/khangdang.webp'
-import padthaikhang from '/src/assets/img/padthaikhang.webp'
-import padseaew from '/src/assets/img/padseaew.webp'
 
 
 export default function DeliveryInfo() {
+
+
+    const [products] = useState([
+        {
+            id: 1,
+            name: "Kheaw Waan",
+            img: '/src/assets/img/kheaw-waan.webp',
+            description: "Trozos de tu proteína favorita (vegetales & tofu, pollo, pollo & camaron, vacuno o camaron), salteados en salsa de curry verde con leche de coco, zapallo italiano y albahaca acompañados con arroz.",
+            price: 8600,
+        },
+        {
+            id: 2,
+            name: "Khan Dang",
+            img: '/src/assets/img/khangdang.webp',
+            description: "Trozos de tu proteína favorita (vegetales & tofu, pollo, pollo & camaron, vacuno o camaron), salteados en salsa de curry rojo con leche de coco bambu y albahaca acompañado con arroz.",
+            price: 8900,
+        },
+        {
+            id: 3,
+            name: "Pad Thai Khang",
+            img: '/src/assets/img/padthaikhang.webp',
+            description: "Fetucinni de arroz salteados en salsa curry con leche de coco, tu proteína favorita (vegetales & tofu, pollo, pollo & camarón, vacuno o camarón), huevo y cebollín, sobre cama de diente de dragón",
+            price: 8900,
+        },
+        {   
+            id: 4,
+            name: "Pad Sea Ew",
+            img: '/src/assets/img/padseaew.webp',
+            description: "Fetucinni de arroz salteados en salsa curry con leche de coco, tu proteína favorita (vegetales & tofu, pollo, pollo & camarón, vacuno o camarón), huevo y cebollín, sobre cama de diente de dragón",
+            price: 8900,
+        },
+     
+        ]);
+
+        //********************** agregar al carrito
+        const [cart , setCart] = useState([]);
+
+        const addToCart = (product) => {
+
+            const isProductInCart = cart.some((item) => item.name === product.name)
+
+                if(isProductInCart) {
+                    alert('Producto ya esta en el carrito de compras')
+                     return
+                }
+
+                setCart([...cart, product]);
+                console.log(cart)
+
+            } 
+
+        console.log(cart)
+
+        //********************** eliminar del carrito
+        const removeFromCart = (id) => {
+
+            //eliminar de html... pero hay que eliminar de array 
+        //    e.target.parentNode.parentNode.remove()
+        //  e.preventDefault()
+    
+           let newCart = cart.filter( el => {
+            console.log(id)
+                return el.id !== id
+           })
+           setCart(newCart)
+           console.log(newCart)
+    
+        }
+
 
     return(
         <div className="delivery-page-container">
@@ -21,37 +86,16 @@ export default function DeliveryInfo() {
                     </section>
                     <section className="food-items-container">
                         <article className="food-item">
-                        < MenuProduct
-                        title="Kheaw Waan"
-                        img={kheaw}
-                        description="Trozos de tu proteína favorita (vegetales & tofu, pollo, pollo & camaron, vacuno o camaron), salteados en salsa de curry verde con leche de coco, zapallo italiano y albahaca acompañados con arroz."
-                        price="$8600"/>
-                        </article>
-                        <article className="food-item">
-                        < MenuProduct
-                        title="Khan Dang"
-                        img={khandang}
-                        description="Trozos de tu proteína favorita (vegetales & tofu, pollo, pollo & camaron, vacuno o camaron), salteados en salsa de curry rojo con leche de coco bambu y albahaca acompañado con arroz."
-                        price="$8900"/>
-                        </article>
-                        <article className="food-item">
-                        < MenuProduct
-                        title="Pad Thai Khang"
-                        img={padthaikhang}
-                        description="Fetucinni de arroz salteados en salsa curry con leche de coco, tu proteína favorita (vegetales & tofu, pollo, pollo & camarón, vacuno o camarón), huevo y cebollín, sobre cama de diente de dragón"
-                        price="$8900"/>
-                        </article>
-                        <article className="food-item">
-                        < MenuProduct
-                        title="Pad Sea Ew"
-                        img={padseaew}
-                        description="Fetucinni de arroz salteados en salsa curry con leche de coco, tu proteína favorita (vegetales & tofu, pollo, pollo & camarón, vacuno o camarón), huevo y cebollín, sobre cama de diente de dragón"
-                        price="$8900"/>
+                        < MenuProduct dataMenu={products} addToCart={addToCart}/>
                         </article>
                     </section>
                     <br />
                     <br />
-                    <TableCarrito/>
+                    <TableCarrito
+                    cart={cart}
+                    removeFromCart={removeFromCart}
+                    addToCart={addToCart}
+                    />
                 </div>
             </div>
         </div>

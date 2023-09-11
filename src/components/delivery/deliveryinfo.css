@@ -1,5 +1,5 @@
 .delivery-page-container {
-    height: 1500px;
+    min-height: 100vh;
     width: auto;
     color: rgb(187, 187, 187) !important;
 

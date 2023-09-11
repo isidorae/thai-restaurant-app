@@ -20,16 +20,16 @@ export default function HeroImg() {
                     <div className="opacity-layer">
                         <section className="icons-homepage-section">
                             <article className="hp-icon-container">
-                            <HomeIcons icono={cartaImg} text="Menú" path='/menu'/>
+                            <HomeIcons icono={cartaImg} text="Menú" path='/thai-restaurant-app/menu'/>
                             </article>
                             <article className="hp-icon-container">
-                            <HomeIcons icono={reservasImg} text="Reservas" path='/reservas'/>
+                            <HomeIcons icono={reservasImg} text="Reservas" path='/thai-restaurant-app/reservas'/>
                             </article>
                             <article className="hp-icon-container">
-                            <HomeIcons icono={deliveryImg} text="Delivery" path='/delivery'/>
+                            <HomeIcons icono={deliveryImg} text="Delivery" path='/thai-restaurant-app/delivery'/>
                             </article>
                             <article className="hp-icon-container">
-                            <HomeIcons icono={contactoImg} text="Contacto" path='/contacto'/>
+                            <HomeIcons icono={contactoImg} text="Contacto" path='/thai-restaurant-app/contacto'/>
                             </article>
                         </section>
                     </div>

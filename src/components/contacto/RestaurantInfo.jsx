@@ -4,6 +4,7 @@ import formimage from '/src/assets/img/formimage.png'
 import { BsInstagram, BsFacebook, BsWhatsapp } from "react-icons/bs";
 import FormContacto from './FormContacto';
 import MapLoad from './MapLoad';
+import { Link } from 'react-router-dom';
 
 export default function RestaurantInfo() {
 
@@ -26,9 +27,10 @@ export default function RestaurantInfo() {
                                 <img src={formimage} alt="" />
                     </section>
                     <section className="social-media-icons">
-                        <a href=""><i className="text-white fs-1"><BsInstagram/></i></a>
-                        <a href=""><i className="text-white fs-1"><BsFacebook/></i></a>
-                        <a href=""><i className="text-white fs-1"><BsWhatsapp/></i></a>
+                    {/* <Link className="link-home-icons fw-bold text-white text-decoration-none" to={path}>{text}</Link> */}
+                        <Link path='/thai-restaurant-app/contacto'><i className="text-white fs-1"><BsInstagram/></i></Link>
+                        <Link path='/thai-restaurant-app/contacto'><i className="text-white fs-1"><BsFacebook/></i></Link>
+                        <Link path='/thai-restaurant-app/contacto'><i className="text-white fs-1"><BsWhatsapp/></i></Link>
                     </section>
                     <div className="mapa-form-container">
                         <section className="mapa-container">
