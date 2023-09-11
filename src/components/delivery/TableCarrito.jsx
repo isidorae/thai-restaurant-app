@@ -1,6 +1,11 @@
 import React, { useState, useEffect} from "react";
 import './tablecarrito.css'
 
+import '/thai-restaurant-app/src/assets/img/kheaw-waan.webp'
+import '/thai-restaurant-app/src/assets/img/khangdang.webp'
+import '/thai-restaurant-app/src/assets/img/padthaikhang.webp'
+import '/thai-restaurant-app/src/assets/img/padseaew.webp'
+
 
 export default function TableCarrito({cart, removeFromCart, addToCart}) {
 

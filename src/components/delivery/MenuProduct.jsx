@@ -4,6 +4,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './menuproduct.css'
 
+import '/thai-restaurant-app/src/assets/img/kheaw-waan.webp'
+import '/thai-restaurant-app/src/assets/img/khangdang.webp'
+import '/thai-restaurant-app/src/assets/img/padthaikhang.webp'
+import '/thai-restaurant-app/src/assets/img/padseaew.webp'
 
 export default function MenuProduct({dataMenu, addToCart}) {
 

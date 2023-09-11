@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import './deliveryinfo.css'
 import MenuProduct from './MenuProduct';
 import TableCarrito from './TableCarrito';
-
+import '/thai-restaurant-app/src/assets/img/kheaw-waan.webp'
+import '/thai-restaurant-app/src/assets/img/khangdang.webp'
+import '/thai-restaurant-app/src/assets/img/padthaikhang.webp'
+import '/thai-restaurant-app/src/assets/img/padseaew.webp'
 
 export default function DeliveryInfo() {
 
