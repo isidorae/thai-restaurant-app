@@ -22,7 +22,7 @@ export default function MenuProduct({dataMenu, addToCart}) {
                 </Row>
                 <Row className="precio-button-container">
                     <p><b>$ {product.price}</b></p>
-                    <button onClick={() => addToCart(product)} className="btn btn-success">Agregar</button>
+                    <button onClick={() => addToCart(product)} className="btn-style btn btn-success fw-bold">Agregar</button>
                 </Row>
             </Col>
             <Col xs={4} md={4} className="carta-product-img align-items-center align-self-center">

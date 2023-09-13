@@ -8,6 +8,7 @@ import NavLogo from '/src/assets/img/thainamlogo.png'
 export default function NavBar() {
   return (
     <>
+    <div className="navbarcontainer">
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
           {/* <Navbar.Brand  className="navbar-logo"><img className="navbar-logo" src={NavLogo} alt="" /><Nav.Link as={Link} to='/' ></Nav.Link></Navbar.Brand> */}
@@ -21,6 +22,7 @@ export default function NavBar() {
           </Nav>
         </Container>
       </Navbar>
+      </div>
     </>
   );
 }

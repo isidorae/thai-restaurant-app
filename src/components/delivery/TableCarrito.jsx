@@ -51,8 +51,13 @@ export default function TableCarrito({cart, removeFromCart, addToCart}) {
 
 
     const confirmOrder = () => {
+        if(total > 0)
        return confirm(`El total de tu orden es "$ ${total}" , seras reedirigo para rellenar tus datos y realizar el pago`)
+        if (total === 0)
+        return alert('No hay productos en el carrito')
+    
     }
+
 
 
 return(
@@ -83,7 +88,7 @@ return(
                             value={quantities[product.id] || 1 }
                             className="cart-quantity-input"
                             />
-                            <button onClick={() => removeFromCart(product.id)} className="btn btn-danger" type="button">Eliminar</button>
+                            <button onClick={() => removeFromCart(product.id)} className="btn btn-danger fw-bold" type="button">Eliminar</button>
                         </div>
                     </div>
 
@@ -95,7 +100,7 @@ return(
             <div className="cart-total">
                 <strong className="cart-total-title">Total</strong>
                 <span className="cart-total-price">${total}</span>
-                <button onClick={confirmOrder} className="btn btn-primary btn-purchase" type="button">COMPRAR</button>
+                <button onClick={confirmOrder} className="btn btn-primary btn-purchase fw-bold" type="button">COMPRAR</button>
             </div>
         </section>
      </div>

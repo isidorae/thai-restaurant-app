@@ -1,8 +1,13 @@
 .reservas-page-container {
-    height: 120vh;
+    height: 100vh;
     width: auto;
     color: rgb(187, 187, 187) !important;
+   
 
+}
+
+.info-reservas {
+    padding: 3rem;
 }
 
 .bg-image-reservas {
@@ -18,6 +23,27 @@
     height: inherit; 
     background: rgb(27,27,27);
     background: linear-gradient(200deg, rgba(27,27,27,1) 0%, rgba(173,173,173,0.46964723389355745) 67%, rgba(20,20,20,1) 95%, rgba(0,0,0,1) 100%);
+}
+
+.datepicker-container {
+    margin: 0 auto;
+    height: 750px;
+    width: 400px;
+    border: medium solid white;
+    background-color: rgba(35, 35, 43, 0.6);
+    display: flex;
+    flex-direction: column;
+}
+
+
+.success-alert {
+    margin-top: 0.7rem;
+    padding: 0.2rem;
+    border: medium solid black;
+    display: block;
+    color:black;
+    font-weight: bold;
+    background-color: rgb(91, 229, 144);
 }
 
 @media (min-width: 550px) { 
