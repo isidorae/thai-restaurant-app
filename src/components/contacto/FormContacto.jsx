@@ -46,7 +46,7 @@ export default function FormContacto() {
                 <input value={email} onChange={e => updateInputValue(e, setEmail) } id="input-email" type="email" name="email" placeholder="Escribe tu correo"  required/>
                 <input value={asunto} onChange={e => updateInputValue(e, setAsunto) } id="input-asunto" type="text" name="asunto" placeholder="Asunto" required />
                 <textarea value={comment} onChange={e => updateInputValue(e, setComment) }  id="input-comment" name="comment" cols="25" rows="7" required></textarea>
-                <input className="btn btn-success" type="submit" value="Enviar" />
+                <input className="btn btn-success fw-bold" type="submit" value="Enviar" />
             </form>
         </>
     )

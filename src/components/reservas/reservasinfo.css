@@ -46,6 +46,17 @@
     background-color: rgb(91, 229, 144);
 }
 
+.missing-data-alert {
+    margin-top: 0.7rem;
+    padding: 0.2rem;
+    border: medium solid black;
+    display: block;
+    color:black;
+    font-weight: bold;
+    background-color: rgb(237, 92, 99);
+}
+
+
 @media (min-width: 550px) { 
 
     .bg-image-reservas {

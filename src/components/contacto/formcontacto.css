@@ -14,29 +14,41 @@ form{
  }
 
  form input {
-   border: 1px solid hsl(353, 100%, 40%);
+   border: 3px solid hsl(353, 10%, 16%);
    background: hsl(323, 29%, 76%);
     margin: 0.2rem;
     padding: 0.2rem;
-    border-radius: 0.2rem;
+    border-radius: 0rem;
  }
+
+ form input:focus {
+  border: 3px solid hsl(240, 47%, 87%);
+ }
+
 
  #input-asunto {
     margin-bottom: 0.2rem;
  }
  
  #input-comment {
-   border: 1px solid hsl(353, 100%, 40%);
+   border: 3px solid hsl(353, 10%, 16%);
    background: hsl(323, 29%, 76%);
    margin: 0.2rem;
-   border-radius: 0.2rem;
+   border-radius: 0rem;
+ }
+
+ form textarea:focus {
+  border: 3px solid hsl(240, 47%, 87%) !important;
  }
 
  /********** BOOSTRAP RESET STYLES ************/
  .btn-success {
+
    --bs-btn-bg: hsl(351, 53%, 42%) !important;
    --bs-btn-border-color: hsl(351, 53%, 42%) !important;
    --bs-btn-hover-bg: hsl(351, 50%, 59%) !important;
    --bs-btn-hover-border-color: hsl(351, 37%, 42%) !important;
+   border-radius: 0 !important;
+   border: 3px solid hsl(353, 10%, 16%) !important;
 
  }

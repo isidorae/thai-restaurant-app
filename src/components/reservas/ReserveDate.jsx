@@ -6,10 +6,10 @@ import "./reservedate.css";
 import HourReserved from "./HourReserved";
 import PropTypes from 'prop-types'
 
-export default function ReserveDate({ addReserve, reserves }) {
+export default function ReserveDate({ addReserve, reserves, handleInvalidState, setMissingData, setMissingHour, setMissingDate }) {
 
   //******date picker value */
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState("");
 
   //******Input values */
   const [name, setName] = useState("");
@@ -44,9 +44,37 @@ export default function ReserveDate({ addReserve, reserves }) {
 
           }
 
+
+          function validateDataEntered() {
+
+            if(name === "" || email === "" || cel === "") {
+              // invalidForm(true)
+              handleInvalidState(setMissingData, true)
+              return false
+            }
+
+            if(time === "") {
+              // invalidTime(true)
+              handleInvalidState(setMissingHour, true)
+              return false
+            }
+
+            if(date === "") {
+              handleInvalidState(setMissingDate, true)
+              return false
+            }
+            return true
+    
+          }
+    
+
        //************ Submit data ***********/
         const validarData = (e) => {
+
+          if (validateDataEntered() == true) {
+
                     e.preventDefault();
+
 
                     const reservesData = {
                     name,
@@ -69,6 +97,8 @@ export default function ReserveDate({ addReserve, reserves }) {
                     setEmail("")
                    return setPeople(1)
                   }
+
+                }
         };
 
   

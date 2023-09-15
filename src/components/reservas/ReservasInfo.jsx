@@ -1,19 +1,32 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import './reservasinfo.css'
 import ReserveDate from './ReserveDate';
 import { db } from '../../firebase'
 import { collection, addDoc } from 'firebase/firestore'
+import AlertMsg from "./AlertMsg";
 
 export default function ReservasInfo() {
-
 
 
    //******crear obj con valores de reserva */
    const [reserves, setReserve] = useState([])
    const [successAlert, setSuccessAlert] = useState(false)
+   const [missingData, setMissingData] = useState(false)
+   const [missingHour, setMissingHour] = useState(false)
+   const [missingDate, setMissingDate] = useState(false)
 
    const reservasCollectionRef = collection(db, 'reservas')
 
+   //******* Generic function to validate data inputs */
+
+   function handleInvalidState(setState, value) {
+        setState(value)
+
+        setTimeout(() => {
+            setState(!value)
+        }, 4000);
+
+   }
 
        //************ on 'Confirmar Datos' ***********/
        const addReserve = (reservesData) => {
@@ -33,30 +46,13 @@ export default function ReservasInfo() {
          //************ Add to server ***********/
     const addToFirestore = async (reservesData) => {
 
-        setSuccessAlert(true)
+        handleInvalidState(setSuccessAlert, true)
 
            await addDoc(reservasCollectionRef, reservesData)
            
     }
 
-    function clearShowAlert() {
-    setTimeout(() => {
-        setSuccessAlert(false);
-    }, 4000);
-}
 
-useEffect(() => {
-
-    if(successAlert) {
-        setTimeout(() => {
-            setSuccessAlert(true);
-        }, 500);
-
-        clearShowAlert()
-
-    }
-
-}, [successAlert])
 
     return(
         <div className="reservas-page-container">
@@ -64,15 +60,18 @@ useEffect(() => {
                 <div className="reservas-page-opacity-layer">
                     <section className="info-reservas">
                         <div className='datepicker-container'>
+                            <AlertMsg stateVar={missingData} msg="Debes rellenar todos los campos" className="missing-data-alert col-sm-9" />
+                            <AlertMsg stateVar={missingHour} msg="Debes seleccionar una hora de reserva" className="missing-data-alert col-sm-12" />
+                            <AlertMsg stateVar={missingDate} msg="Debes seleccionar una fecha" className="missing-data-alert col-sm-12" />
                             <ReserveDate
                             addReserve={addReserve}
                             reserves={reserves}
+                            handleInvalidState={handleInvalidState}
+                            setMissingData={setMissingData}
+                            setMissingHour={setMissingHour}
+                            setMissingDate={setMissingDate}
                             />
-                            {successAlert && (
-                                 <div className="success-alert col-sm-8 align-self-center" role="alert">
-                                 Reserva realizada con exito! 
-                                 </div>
-                            )}
+                            <AlertMsg stateVar={successAlert} msg="Reserva realizada con exito!" className="success-alert col-sm-82" />
                         </div>
                     </section>
                     
