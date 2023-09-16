@@ -1,14 +1,50 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './restaurantinfo.css'
 import formimage from '/src/assets/img/formimage.png'
 import { BsInstagram, BsFacebook, BsWhatsapp } from "react-icons/bs";
+import Spinner from 'react-bootstrap/Spinner';
 import FormContacto from './FormContacto';
-import MapLoad from './MapLoad';
+import ShowMap from './ShowMap';
 import { Link } from 'react-router-dom';
+
+import { db } from '../../firebase'
+import { collection, addDoc } from 'firebase/firestore'
 
 export default function RestaurantInfo() {
 
+    const [mapLoaded, setMapLoaded] = useState(false);
 
+    const formContactCollectionRef = collection(db, 'thainam-contact-form')
+
+    //****load map */
+    useEffect(() => {
+
+        const iframe = document.querySelector('iframe')
+
+        const handleLoad = () => {
+            setMapLoaded(true);
+        };
+
+        iframe.addEventListener('load', handleLoad);
+
+    }, [mapLoaded]);
+
+        //****submit data*/
+    const handleSubmit = (e, formObj) => {
+
+        e.preventDefault()
+
+        addContactFormToFirestore(formObj)
+
+        alert(`Gracias '${formObj.name}', tu formulario ha sido enviado`)
+   
+    }
+
+    const addContactFormToFirestore = async (contactFormData) => {
+
+           await addDoc(formContactCollectionRef, contactFormData)
+           
+    }
 
 
     return(
@@ -28,25 +64,25 @@ export default function RestaurantInfo() {
                     </section>
                     <section className="social-media-icons">
                     {/* <Link className="link-home-icons fw-bold text-white text-decoration-none" to={path}>{text}</Link> */}
-                        <Link path='/thai-restaurant-app/contacto'><i className="text-white fs-1"><BsInstagram/></i></Link>
-                        <Link path='/thai-restaurant-app/contacto'><i className="text-white fs-1"><BsFacebook/></i></Link>
-                        <Link path='/thai-restaurant-app/contacto'><i className="text-white fs-1"><BsWhatsapp/></i></Link>
+                        <Link path='/thai-restaurant-app/contacto'><i className="social-icons text-white fs-1"><BsInstagram/></i></Link>
+                        <Link path='/thai-restaurant-app/contacto'><i className="social-icons text-white fs-1"><BsFacebook/></i></Link>
+                        <Link path='/thai-restaurant-app/contacto'><i className="social-icons text-white fs-1"><BsWhatsapp/></i></Link>
                     </section>
                     <div className="mapa-form-container">
                         <section className="mapa-container">
                                 <div className="mapa-ubicacion">
-                                    {/* <iframe 
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.8710672579205!2d-70.59875199999999!3d-33.4005278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf49efb518c3%3A0x7fc46267b5c0ea60!2sAlonso%20de%20C%C3%B3rdova%203053%2C%20Vitacura%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1693434996763!5m2!1ses!2scl"
-                                    style={{ border:0 }}
-                                    loading="lazy"
-                                    referrerPolicy="no-referrer-when-downgrade"
-                                    >
-                                    </iframe> */}
-                                    < MapLoad/>
+                                  {!mapLoaded ? (
+                                        <Spinner animation="border" role="status">
+                                        <span className="visually-hidden">Loading...</span>
+                                        </Spinner>
+                                    ) : null}
+                                    < ShowMap/>
                                 </div>
                         </section>
                         <section className="form-container">
-                                < FormContacto/>
+                                < FormContacto
+                                handleSubmit={handleSubmit}
+                                />
                         </section>
                     </div>
                 </div>

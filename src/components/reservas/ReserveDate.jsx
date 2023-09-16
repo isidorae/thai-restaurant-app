@@ -6,7 +6,7 @@ import "./reservedate.css";
 import HourReserved from "./HourReserved";
 import PropTypes from 'prop-types'
 
-export default function ReserveDate({ addReserve, reserves, handleInvalidState, setMissingData, setMissingHour, setMissingDate }) {
+export default function ReserveDate({ addReserve, reserves, handleDisplayMsg, setMissingData, setMissingHour, setMissingDate }) {
 
   //******date picker value */
   const [date, setDate] = useState("");
@@ -49,18 +49,18 @@ export default function ReserveDate({ addReserve, reserves, handleInvalidState, 
 
             if(name === "" || email === "" || cel === "") {
               // invalidForm(true)
-              handleInvalidState(setMissingData, true)
+              handleDisplayMsg(setMissingData)
               return false
             }
 
             if(time === "") {
               // invalidTime(true)
-              handleInvalidState(setMissingHour, true)
+              handleDisplayMsg(setMissingHour)
               return false
             }
 
             if(date === "") {
-              handleInvalidState(setMissingDate, true)
+              handleDisplayMsg(setMissingDate)
               return false
             }
             return true

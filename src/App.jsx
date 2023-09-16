@@ -7,7 +7,6 @@ import Delivery from './routes/Delivery'
 import Contacto from './routes/Contacto'
 import Reservas from './routes/Reservas';
 import Footer from './components/Footer';
-import Carrito from './routes/Carrito';
 
 
 export default function App() {
@@ -21,7 +20,6 @@ export default function App() {
         <Route path='/thai-restaurant-app/delivery' element={ < Delivery />} ></Route>
         <Route path='/thai-restaurant-app/menu' element={< Menu />} ></Route>
         <Route path='/thai-restaurant-app/reservas' element={< Reservas />} ></Route>
-        <Route path='/thai-restaurant-app/carrito' element={< Carrito />} ></Route>
         <Route path='/*' element={< Navigate to='/'/>} ></Route>
       </Routes>
       < Footer/>

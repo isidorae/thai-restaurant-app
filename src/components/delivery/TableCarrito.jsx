@@ -7,7 +7,6 @@ export default function TableCarrito({cart, removeFromCart, addToCart}) {
     const [total, setTotal] = useState(0)
     const [quantities, setQuantities] = useState({})
 
-    // const [cartPrice, setCartPrice] = useState(0)
 
     useEffect(() => {
 

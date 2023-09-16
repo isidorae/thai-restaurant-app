@@ -63,11 +63,7 @@ export default function DeliveryInfo() {
 
         //********************** eliminar del carrito
         const removeFromCart = (id) => {
-
-            //eliminar de html... pero hay que eliminar de array 
-        //    e.target.parentNode.parentNode.remove()
-        //  e.preventDefault()
-    
+            
            let newCart = cart.filter( el => {
             console.log(id)
                 return el.id !== id
@@ -89,7 +85,10 @@ export default function DeliveryInfo() {
                     </section>
                     <section className="food-items-container">
                         <article className="food-item">
-                        < MenuProduct dataMenu={products} addToCart={addToCart}/>
+                        < MenuProduct 
+                        dataMenu={products}
+                        addToCart={addToCart}
+                        />
                         </article>
                     </section>
                     <br />

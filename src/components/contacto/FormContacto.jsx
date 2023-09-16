@@ -2,10 +2,8 @@ import React, { useState } from 'react'
 import './formcontacto.css'
 
 
-export default function FormContacto() {
+export default function FormContacto({handleSubmit}) {
 
-    //guardar data ingresada en un objeto dentro de array 
-    const [formulario, setFormulario] = useState([])
 
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -13,26 +11,28 @@ export default function FormContacto() {
     const [comment, setComment] = useState("")
 
 
-    const handleSubmit = (e) => {
+    const gatherFormPersonData = (e) => {
         e.preventDefault()
 
-        setFormulario( [...formulario , {
+        const formPersonData = {
             name: name,
             email: email,
             asunto: asunto,
             comment: comment
-        }])
+        }
 
-        console.log(formulario)
+        console.log(formPersonData)
 
-        alert(`Gracias '${name}', tu formulario ha sido enviado`)
+        handleSubmit(e, formPersonData)
 
         setName("")
         setEmail("")
         setAsunto("")
         setComment("")
-   
+
+
     }
+
 
     const updateInputValue = (e, setSomething) => {
        return setSomething(e.target.value)
@@ -46,7 +46,7 @@ export default function FormContacto() {
                 <input value={email} onChange={e => updateInputValue(e, setEmail) } id="input-email" type="email" name="email" placeholder="Escribe tu correo"  required/>
                 <input value={asunto} onChange={e => updateInputValue(e, setAsunto) } id="input-asunto" type="text" name="asunto" placeholder="Asunto" required />
                 <textarea value={comment} onChange={e => updateInputValue(e, setComment) }  id="input-comment" name="comment" cols="25" rows="7" required></textarea>
-                <input className="btn btn-success fw-bold" type="submit" value="Enviar" />
+                <input onClick={gatherFormPersonData} className="btn btn-success fw-bold" type="submit" value="Enviar" />
             </form>
         </>
     )

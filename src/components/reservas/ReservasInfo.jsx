@@ -19,11 +19,11 @@ export default function ReservasInfo() {
 
    //******* Generic function to validate data inputs */
 
-   function handleInvalidState(setState, value) {
-        setState(value)
+   function handleDisplayMsg(setState) {
+        setState(true)
 
         setTimeout(() => {
-            setState(!value)
+            setState(!true)
         }, 4000);
 
    }
@@ -46,7 +46,7 @@ export default function ReservasInfo() {
          //************ Add to server ***********/
     const addToFirestore = async (reservesData) => {
 
-        handleInvalidState(setSuccessAlert, true)
+        handleDisplayMsg(setSuccessAlert)
 
            await addDoc(reservasCollectionRef, reservesData)
            
@@ -66,7 +66,7 @@ export default function ReservasInfo() {
                             <ReserveDate
                             addReserve={addReserve}
                             reserves={reserves}
-                            handleInvalidState={handleInvalidState}
+                            handleDisplayMsg={handleDisplayMsg}
                             setMissingData={setMissingData}
                             setMissingHour={setMissingHour}
                             setMissingDate={setMissingDate}

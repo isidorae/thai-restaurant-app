@@ -1,20 +1,20 @@
 .contact-page-container {
-    height: 120vh;
+    min-height: 120vh;
     width: auto;
 
 }
 
 .bg-image-contact {
-    height: inherit;
+    min-height: inherit;
     background-image: url(/src/assets/img/contactimg.jpeg);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-position: -250px 0px;
 
 }
 
 .contact-page-opacity-layer {
-    height: inherit; 
+    min-height: inherit; 
     background: rgb(27,27,27);
     background: linear-gradient(200deg, rgba(27,27,27,1) 0%, rgba(173,173,173,0.46964723389355745) 67%, rgba(20,20,20,1) 95%, rgba(0,0,0,1) 100%);
 }
@@ -29,9 +29,6 @@
 
 
  .mapa-form-container {
-    /* background-color: aliceblue; */
-    /* width: 1000px;
-    height: 600px; */
     margin: 0 auto;
     margin-top: 1rem;
     display: flex;
@@ -83,6 +80,9 @@
     opacity: 80%;
  }
 
+ .social-icons:hover {
+   color: rgb(34, 23, 51) !important;
+ }
 
 
 /******************  MEDIA QUERIE */
