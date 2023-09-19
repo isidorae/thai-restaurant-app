@@ -11,10 +11,10 @@ export default function TableCarrito({cart, removeFromCart, addToCart}) {
     useEffect(() => {
 
         updateCartTotal()
-        console.log("****Total****")
-        console.log(total)
-        console.log("****Quantities****")
-        console.log(quantities)
+        // console.log("****Total****")
+        // console.log(total)
+        // console.log("****Quantities****")
+        // console.log(quantities)
 
 
     }, [quantities, addToCart])
@@ -39,9 +39,9 @@ export default function TableCarrito({cart, removeFromCart, addToCart}) {
             
             const quantity = quantities[product.id] || 1;
             const price = product.price;
-            console.log(product)
-            console.log(quantity)
-            console.log(price)
+            // console.log(product)
+            // console.log(quantity)
+            // console.log(price)
             newTotal = newTotal + (price*quantity) 
 
         })

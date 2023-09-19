@@ -49,7 +49,6 @@ export default function MainDishes() {
     <Container className="dishes-container d-flex align-items-center justify-content-center flex-wrap">
       {  mainDishes.map((dish) => {
 
-        console.log(mainDishes[0])
 
         return(
 

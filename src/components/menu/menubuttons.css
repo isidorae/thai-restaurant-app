@@ -7,3 +7,7 @@
     border: 0;
     
 }
+
+.active-menu-btn {
+    background-color: purple;
+}

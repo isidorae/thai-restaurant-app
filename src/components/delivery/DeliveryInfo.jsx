@@ -55,11 +55,11 @@ export default function DeliveryInfo() {
                 }
 
                 setCart([...cart, product]);
-                console.log(cart)
+                // console.log(cart)
 
             } 
 
-        console.log(cart)
+        // console.log(cart)
 
         //********************** eliminar del carrito
         const removeFromCart = (id) => {
