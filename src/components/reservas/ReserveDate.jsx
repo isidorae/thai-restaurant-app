@@ -37,13 +37,12 @@ export default function ReserveDate({ addReserve, reserves, handleDisplayMsg, se
     console.log(time);
   }, [time]);
 
-      //************ Receive 'time' value from Child ***********/
+          //************ Receive 'time' value from Child ***********/
           const getTimeValue = (value) => {
 
             setTime(value)
 
           }
-
 
           function validateDataEntered() {
 
@@ -66,15 +65,13 @@ export default function ReserveDate({ addReserve, reserves, handleDisplayMsg, se
             return true
     
           }
-    
-
+  
        //************ Submit data ***********/
         const validarData = (e) => {
 
           if (validateDataEntered() == true) {
 
                     e.preventDefault();
-
 
                     const reservesData = {
                     name,
@@ -85,7 +82,6 @@ export default function ReserveDate({ addReserve, reserves, handleDisplayMsg, se
                     people,
                     };
 
-                    // validateData(reservesData);
                     addReserve(reservesData);
 
                   if(reserves.length < 1) {
@@ -100,9 +96,6 @@ export default function ReserveDate({ addReserve, reserves, handleDisplayMsg, se
 
                 }
         };
-
-  
-
 
   return (
     <>
@@ -159,7 +152,6 @@ export default function ReserveDate({ addReserve, reserves, handleDisplayMsg, se
     </>
   );
 }
-
 
 ReserveDate.propTypes = {
   addReserve: PropTypes.func.isRequired

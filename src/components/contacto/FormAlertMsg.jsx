@@ -1,6 +1,6 @@
 
 export default function AlertMsg({msg, stateVar, className }) {
-
+    
     return (
         <>
         {stateVar && (
@@ -11,6 +11,8 @@ export default function AlertMsg({msg, stateVar, className }) {
         </div>
         )}
         </>
+  
+
     )
 
 }

@@ -9,7 +9,6 @@ import padseaew from '/src/assets/img/padseaew.webp'
 
 export default function DeliveryInfo() {
 
-
     const [products] = useState([
         {
             id: 1,
@@ -59,8 +58,6 @@ export default function DeliveryInfo() {
 
             } 
 
-        // console.log(cart)
-
         //********************** eliminar del carrito
         const removeFromCart = (id) => {
             
@@ -70,9 +67,8 @@ export default function DeliveryInfo() {
            })
            setCart(newCart)
            console.log(newCart)
-    
-        }
 
+        }
 
     return(
         <div className="delivery-page-container">

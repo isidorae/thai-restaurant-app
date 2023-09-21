@@ -7,8 +7,6 @@ import AlertMsg from "./AlertMsg";
 
 export default function ReservasInfo() {
 
-
-   //******crear obj con valores de reserva */
    const [reserves, setReserve] = useState([])
    const [successAlert, setSuccessAlert] = useState(false)
    const [missingData, setMissingData] = useState(false)
@@ -17,17 +15,14 @@ export default function ReservasInfo() {
 
    const reservasCollectionRef = collection(db, 'reservas')
 
-   //******* Generic function to validate data inputs */
+        //******* display missing data msg
+        function handleDisplayMsg(setState) {
+                setState(true)
 
-   function handleDisplayMsg(setState) {
-        setState(true)
-
-        setTimeout(() => {
-            setState(!true)
-        }, 4000);
-
-   }
-
+                setTimeout(() => {
+                    setState(!true)
+                }, 4000);
+        }
        //************ on 'Confirmar Datos' ***********/
        const addReserve = (reservesData) => {
 
@@ -40,19 +35,15 @@ export default function ReservasInfo() {
 
           if(confirmData) return addToFirestore(reservesData)
           setReserve([])
-        
+        }
 
-    }
          //************ Add to server ***********/
-    const addToFirestore = async (reservesData) => {
+         const addToFirestore = async (reservesData) => {
 
         handleDisplayMsg(setSuccessAlert)
-
-           await addDoc(reservasCollectionRef, reservesData)
+        await addDoc(reservasCollectionRef, reservesData)
            
-    }
-
-
+        }
 
     return(
         <div className="reservas-page-container">
@@ -78,7 +69,5 @@ export default function ReservasInfo() {
                 </div>
             </div>
         </div>
-    )
-
-
+        )
 }

@@ -3,7 +3,6 @@ import './restaurantinfo.css'
 
 export default function ShowMap() {
 
-
     return(
         <>
             <iframe 

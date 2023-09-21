@@ -2,16 +2,13 @@ import React from 'react'
 import './heroimg.css'
 import HomeIcons from './HomeIcons'
 
-
 //ICONOS
 import cartaImg from '/src/assets/img/menu.png'
 import contactoImg from '/src/assets/img/contacto.png'
 import deliveryImg from '/src/assets/img/delivery.png'
 import reservasImg from '/src/assets/img/reservas.png'
 
-
 export default function HeroImg() {
-
 
     return(
         <>
@@ -37,5 +34,4 @@ export default function HeroImg() {
         </div>
         </>
     )
-
 }

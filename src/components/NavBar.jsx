@@ -11,10 +11,8 @@ export default function NavBar() {
     <div className="navbarcontainer">
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          {/* <Navbar.Brand  className="navbar-logo"><img className="navbar-logo" src={NavLogo} alt="" /><Nav.Link as={Link} to='/' ></Nav.Link></Navbar.Brand> */}
           <Nav.Link as={Link} to='/thai-restaurant-app/' ><img className="navbar-logo" src={NavLogo} alt="" /></Nav.Link>
           <Nav className="me-auto">
-            {/* <Nav.Link as={Link} className='fw-bold ' to='/' ></Nav.Link> */}
             <Nav.Link as={Link} className='fw-bold ' to='/thai-restaurant-app/menu'>MENU</Nav.Link>
             <Nav.Link as={Link} className='fw-bold ' to='/thai-restaurant-app/delivery'>DELIVERY</Nav.Link>
             <Nav.Link as={Link} className='fw-bold ' to='/thai-restaurant-app/reservas'>RESERVAS</Nav.Link>

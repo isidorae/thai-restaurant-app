@@ -14,9 +14,10 @@ export default function RestaurantInfo() {
 
     const [mapLoaded, setMapLoaded] = useState(false);
 
+    //****collection reference
     const formContactCollectionRef = collection(db, 'thainam-contact-form')
 
-    //****load map */
+    //****load map 
     useEffect(() => {
 
         const iframe = document.querySelector('iframe')
@@ -29,23 +30,20 @@ export default function RestaurantInfo() {
 
     }, [mapLoaded]);
 
-        //****submit data*/
+    //****submit data
     const handleSubmit = (e, formObj) => {
 
         e.preventDefault()
-
         addContactFormToFirestore(formObj)
-
         alert(`Gracias '${formObj.name}', tu formulario ha sido enviado`)
-   
+    
     }
-
+    //****add data to firestore
     const addContactFormToFirestore = async (contactFormData) => {
 
            await addDoc(formContactCollectionRef, contactFormData)
            
     }
-
 
     return(
         <div className="contact-page-container">
