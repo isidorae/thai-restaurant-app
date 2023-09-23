@@ -15,11 +15,11 @@ export default function App() {
     <>
       <NavBar />
       <Routes>
-        <Route path='/thai-restaurant-app/' element={< Inicio/>} ></Route>
-        <Route path='/thai-restaurant-app/contacto' element={< Contacto />} ></Route>
-        <Route path='/thai-restaurant-app/delivery' element={ < Delivery />} ></Route>
-        <Route path='/thai-restaurant-app/menu' element={< Menu />} ></Route>
-        <Route path='/thai-restaurant-app/reservas' element={< Reservas />} ></Route>
+        <Route path='/' element={< Inicio/>} ></Route>
+        <Route path='/contacto' element={< Contacto />} ></Route>
+        <Route path='/delivery' element={ < Delivery />} ></Route>
+        <Route path='/menu' element={< Menu />} ></Route>
+        <Route path='/reservas' element={< Reservas />} ></Route>
         <Route path='/*' element={< Navigate to='/'/>} ></Route>
       </Routes>
       < Footer/>

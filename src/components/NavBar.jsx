@@ -13,10 +13,10 @@ export default function NavBar() {
         <Container>
           <Nav.Link as={Link} to='/thai-restaurant-app/' ><img className="navbar-logo" src={NavLogo} alt="" /></Nav.Link>
           <Nav className="me-auto">
-            <Nav.Link as={Link} className='fw-bold ' to='/thai-restaurant-app/menu'>MENU</Nav.Link>
-            <Nav.Link as={Link} className='fw-bold ' to='/thai-restaurant-app/delivery'>DELIVERY</Nav.Link>
-            <Nav.Link as={Link} className='fw-bold ' to='/thai-restaurant-app/reservas'>RESERVAS</Nav.Link>
-            <Nav.Link as={Link} className='fw-bold ' to='/thai-restaurant-app/contacto'>CONTACTO</Nav.Link>
+            <Nav.Link as={Link} className='fw-bold ' to='/menu'>MENU</Nav.Link>
+            <Nav.Link as={Link} className='fw-bold ' to='/delivery'>DELIVERY</Nav.Link>
+            <Nav.Link as={Link} className='fw-bold ' to='/reservas'>RESERVAS</Nav.Link>
+            <Nav.Link as={Link} className='fw-bold ' to='/contacto'>CONTACTO</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

@@ -62,9 +62,9 @@ export default function RestaurantInfo() {
                     </section>
                     <section className="social-media-icons">
                     {/* <Link className="link-home-icons fw-bold text-white text-decoration-none" to={path}>{text}</Link> */}
-                        <Link path='/thai-restaurant-app/contacto'><i className="social-icons text-white fs-1"><BsInstagram/></i></Link>
-                        <Link path='/thai-restaurant-app/contacto'><i className="social-icons text-white fs-1"><BsFacebook/></i></Link>
-                        <Link path='/thai-restaurant-app/contacto'><i className="social-icons text-white fs-1"><BsWhatsapp/></i></Link>
+                        <Link path='/contacto'><i className="social-icons text-white fs-1"><BsInstagram/></i></Link>
+                        <Link path='/contacto'><i className="social-icons text-white fs-1"><BsFacebook/></i></Link>
+                        <Link path='/contacto'><i className="social-icons text-white fs-1"><BsWhatsapp/></i></Link>
                     </section>
                     <div className="mapa-form-container">
                         <section className="mapa-container">
