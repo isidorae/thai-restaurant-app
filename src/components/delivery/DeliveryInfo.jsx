@@ -52,7 +52,6 @@ export default function DeliveryInfo() {
                     alert('Producto ya esta en el carrito de compras')
                      return
                 }
-
                 setCart([...cart, product]);
                 // console.log(cart)
 
@@ -91,6 +90,7 @@ export default function DeliveryInfo() {
                     <br />
                     <TableCarrito
                     cart={cart}
+                    setCart={setCart}
                     removeFromCart={removeFromCart}
                     addToCart={addToCart}
                     />

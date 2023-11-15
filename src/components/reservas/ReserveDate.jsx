@@ -6,7 +6,7 @@ import "./reservedate.css";
 import HourReserved from "./HourReserved";
 import PropTypes from 'prop-types'
 
-export default function ReserveDate({ addReserve, reserves, handleDisplayMsg, setMissingData, setMissingHour, setMissingDate }) {
+export default function ReserveDate({ addReserve, reserves, handleDisplayMsg, setMissingData, setMissingHour, setMissingDate, setWrongEmail }) {
 
   //******date picker value */
   const [date, setDate] = useState("");
@@ -19,6 +19,8 @@ export default function ReserveDate({ addReserve, reserves, handleDisplayMsg, se
 
   //******boton elegir hora */
   const [time, setTime] = useState("");
+
+  const emailRegEx = (/^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/g.test(email))
 
   //******update Input values */
   const updateInputValue = (e, setSomething) => {
@@ -57,6 +59,11 @@ export default function ReserveDate({ addReserve, reserves, handleDisplayMsg, se
               handleDisplayMsg(setMissingHour)
               return false
             }
+
+            if(!emailRegEx){
+              handleDisplayMsg(setWrongEmail);
+              return false
+          }
 
             if(date === "") {
               handleDisplayMsg(setMissingDate)

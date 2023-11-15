@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './menuinfo.css'
 import MainDishes from './MainDishes';
 import Entrees from './Entrees';
-import SelectMenuBtn from './selectMenuBtn';
+import SelectMenuBtn from './SelectMenuBtn';
 import Desserts from './Desserts';
 
 export default function MenuInfo() {

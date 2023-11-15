@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from "react";
 import './tablecarrito.css'
 
-export default function TableCarrito({cart, removeFromCart, addToCart}) {
+export default function TableCarrito({cart, setCart, removeFromCart, addToCart}) {
 
     const [total, setTotal] = useState(0)
     const [quantities, setQuantities] = useState({})
@@ -43,8 +43,9 @@ export default function TableCarrito({cart, removeFromCart, addToCart}) {
     }
 
     const confirmOrder = () => {
-        if(total > 0)
-       return confirm(`El total de tu orden es "$ ${total}" , seras reedirigo para rellenar tus datos y realizar el pago`)
+        if(total > 0){
+        confirm(`El total de tu orden es "$ ${total}" , seras reedirigo para rellenar tus datos y realizar el pago`)
+        return setCart([])}
         if (total === 0)
         return alert('No hay productos en el carrito')
     

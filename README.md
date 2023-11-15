@@ -3,7 +3,7 @@
 El siguiente proyecto consiste en una página web diseñada para un restaurant de comida tailandesa. Contiene estilo responsivo, adaptable a móviles y desktop. Las funcionalidades que tiene son las siguientes;
 
 --> visualizar Menu (Entradas, fondos, postres)
---> Demo carrito de compras para simular funcionalidad de Delivery
+--> Demo carrito de compras para delivery
 --> Sección de Reserva de horas para simular reserva presencial en restaurant
 --> seccion de contacto con Mapa y formulario de contacto
 

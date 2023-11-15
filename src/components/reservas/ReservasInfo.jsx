@@ -12,6 +12,7 @@ export default function ReservasInfo() {
    const [missingData, setMissingData] = useState(false)
    const [missingHour, setMissingHour] = useState(false)
    const [missingDate, setMissingDate] = useState(false)
+   const [wrongEmail, setWrongEmail] = useState(false)
 
    const reservasCollectionRef = collection(db, 'reservas')
 
@@ -33,8 +34,10 @@ export default function ReservasInfo() {
             "${reservesData.people}" personas, y datos de contacto"${reservesData.email}" 
           y "${reservesData.cel}" ?`)
 
-          if(confirmData) return addToFirestore(reservesData)
-          setReserve([])
+          if(confirmData) {
+            addToFirestore(reservesData)
+        }
+        setReserve([])
         }
 
          //************ Add to server ***********/
@@ -42,7 +45,7 @@ export default function ReservasInfo() {
 
         handleDisplayMsg(setSuccessAlert)
         await addDoc(reservasCollectionRef, reservesData)
-           
+           console.log('data sent to firestore', reservesData)
         }
 
     return(
@@ -54,6 +57,7 @@ export default function ReservasInfo() {
                             <AlertMsg stateVar={missingData} msg="Debes rellenar todos los campos" className="missing-data-alert col-sm-9" />
                             <AlertMsg stateVar={missingHour} msg="Debes seleccionar una hora de reserva" className="missing-data-alert col-sm-12" />
                             <AlertMsg stateVar={missingDate} msg="Debes seleccionar una fecha" className="missing-data-alert col-sm-12" />
+                            <AlertMsg stateVar={wrongEmail} msg="Debes ingresar un email válido" className="missing-data-alert col-sm-12" />
                             <ReserveDate
                             addReserve={addReserve}
                             reserves={reserves}
@@ -61,6 +65,7 @@ export default function ReservasInfo() {
                             setMissingData={setMissingData}
                             setMissingHour={setMissingHour}
                             setMissingDate={setMissingDate}
+                            setWrongEmail={setWrongEmail}
                             />
                             <AlertMsg stateVar={successAlert} msg="Reserva realizada con exito!" className="success-alert col-sm-82" />
                         </div>
