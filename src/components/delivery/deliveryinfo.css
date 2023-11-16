@@ -6,7 +6,7 @@
 }
 
 .bg-image-delivery {
-    height: inherit;
+    min-height: inherit;
     background-image: url(/src/assets/img/deliveryimg.jpg);
     background-size: cover;
     background-repeat: repeat-y;
@@ -15,7 +15,7 @@
 }
 
 .delivery-page-opacity-layer {
-    height: inherit; 
+    min-height: inherit; 
     background: rgb(27,27,27);
     background: linear-gradient(200deg, rgba(27,27,27,1) 0%, rgba(173,173,173,0.46964723389355745) 67%, rgba(20,20,20,1) 95%, rgba(0,0,0,1) 100%);
 }

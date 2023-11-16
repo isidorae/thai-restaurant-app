@@ -30,8 +30,6 @@ export default function DeliveryInfo() {
                         />
                         </article>
                     </section>
-                    <br />
-                    <br />
                 </div>
             </div>
         </div>
