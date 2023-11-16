@@ -1,56 +1,10 @@
-import React, { useState, useEffect} from "react";
+import { useContext } from 'react';
+import CartContext from '../../context/CartContext';
 import './tablecarrito.css'
 
-export default function TableCarrito({cart, setCart, removeFromCart, addToCart}) {
+export default function TableCarrito() {
 
-    const [total, setTotal] = useState(0)
-    const [quantities, setQuantities] = useState({})
-
-    useEffect(() => {
-
-        updateCartTotal()
-        // console.log("****Total****")
-        // console.log(total)
-        // console.log("****Quantities****")
-        // console.log(quantities)
-
-    }, [quantities, addToCart])
-
-    //***************** CHANGE QUANTITY for specific product */
-    const handleQuantityChange = (productId, newQuantity) => {
-        setQuantities((prevQuantities) => (
-            {
-            ...prevQuantities,
-            [productId]: newQuantity,
-        }
-        ));
-    }
-
-    //***************** UpdateCartTotal */
-    const updateCartTotal = () => {
-        let newTotal = 0;
-        cart.forEach((product) => {
-            
-            const quantity = quantities[product.id] || 1;
-            const price = product.price;
-            // console.log(product)
-            // console.log(quantity)
-            // console.log(price)
-            newTotal = newTotal + (price*quantity) 
-
-        })
-        setTotal(newTotal)
-    }
-
-    const confirmOrder = () => {
-        if(total > 0){
-        confirm(`El total de tu orden es "$ ${total}" , seras reedirigo para rellenar tus datos y realizar el pago`)
-        return setCart([])}
-        if (total === 0)
-        return alert('No hay productos en el carrito')
-    
-    }
-
+    const { removeFromCart, addOneQuantity, reduceOneQuantity, cart, total, confirmOrder} = useContext(CartContext)
 
         return(
             
@@ -64,7 +18,9 @@ export default function TableCarrito({cart, setCart, removeFromCart, addToCart})
                     </div>
                     <div className="cart-items">
                         {/* ITEM A COMPRAR */}
-                        {cart.map(product => {
+                        {!cart.cart
+                        ? "sin items en carrito"
+                        :  cart.cart.map(product => {
 
                             return (
                             <div className="cart-row" key={product.id} >
@@ -74,25 +30,23 @@ export default function TableCarrito({cart, setCart, removeFromCart, addToCart})
                                 </div>
                                 <span className="cart-price cart-column">$ {product.price}</span>
                                 <div className="cart-quantity cart-column">
-                                    <input 
-                                    onChange={(e) => handleQuantityChange(product.id, parseInt(e.target.value))}
-                                    type="number"
-                                    value={quantities[product.id] || 1 }
-                                    className="cart-quantity-input"
-                                    />
+                                      <button onClick={() => addOneQuantity(product)}className="btn-plus-cart">+</button>
+                                    <span className="cart-quantity-span">{product.quantity || 1 }</span>
+                                    <button onClick={() => reduceOneQuantity(product)} className="btn-minus-cart">-</button>
                                     <button onClick={() => removeFromCart(product.id)} className="btn btn-danger fw-bold" type="button">Eliminar</button>
                                 </div>
                             </div>
 
                             )
 
-                        })}
+                        })
+                    }
                     
                     </div>
                     <div className="cart-total">
                         <strong className="cart-total-title">Total</strong>
                         <span className="cart-total-price">${total}</span>
-                        <button onClick={confirmOrder} className="btn btn-primary btn-purchase fw-bold" type="button">COMPRAR</button>
+                        <button onClick={() => confirmOrder(total)} className="btn btn-primary btn-purchase fw-bold" type="button">COMPRAR</button>
                     </div>
                 </section>
             </div>

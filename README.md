@@ -10,3 +10,5 @@ El siguiente proyecto consiste en una página web diseñada para un restaurant d
 Tanto la información enviada a traves de la 'reserva de horas' como del 'formulario de contacto' estan conectadas a un Firestore Database de prueba, en donde la info es recibida y almacenada. 
 
 El proyecto esta realizado con React, haciendo uso de las siguientes librerias; react-DatePicker, react-router y para estilos se uso en parte componentes de Bootstrap. 
+
+Los hooks usados para hacer el carrito de compras fueron useReducer y useContext. 

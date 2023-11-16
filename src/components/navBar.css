@@ -3,3 +3,29 @@
     width: 2rem;
     height: auto;
 }
+
+.cart-navbar-button {
+    color: rgb(217, 217, 217);
+    background-color: rgb(67, 67, 67);
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    border: none;
+    position: relative;
+}
+
+.cart-product-num {
+    font-family: 'Shrikhand', cursive;
+    background-color: rgb(214, 49, 49);
+    height: 1.5rem;
+    width: 1.5rem;
+    border: thin solid rgb(214, 49, 49);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(25%, 25%);
+}

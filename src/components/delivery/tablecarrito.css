@@ -152,3 +152,26 @@
     margin-left: 23rem;
     margin-bottom: 1rem;
 } */
+
+.btn-minus-cart,
+.btn-plus-cart {
+    border:none;
+    border-radius: 2px;
+    padding: 0.5rem;
+}
+
+.btn-minus-cart {
+    margin-right: 1rem;
+}
+
+.btn-minus-cart:hover,
+.btn-plus-cart:hover {
+   background-color: rgb(195, 195, 195);
+}
+
+.cart-quantity-span {
+    width:1.5rem;
+    color: black;
+    background-color: white;
+    padding: 0.5rem;
+}
